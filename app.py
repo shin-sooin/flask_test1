@@ -126,6 +126,12 @@ def delete(id):
             break
     return redirect('/')
 
+@app.route('/testing/<int:id>', methods=['GET','POST'])
+def testing(id):
+    if id==0:
+        return 'object detection mode'
+    else:
+        return 'ocr mode'
 
 if __name__=='__main__':
     app.run(debug=True, port=5001)
